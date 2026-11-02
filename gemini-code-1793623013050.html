@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT: NEMESIS // Villain Intel Network</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="terminal-container">
+    <header class="nemesis-header">
+      <div class="title-row">
+        <h1 class="glitch-title">PROJECT: NEMESIS</h1>
+        <span class="status-indicator">SYSTEM ONLINE // CLEARANCE: LEVEL 5</span>
+      </div>
+      <p class="subtitle">Confidential Metahuman Surveillance &amp; Vulnerability Matrix</p>
+    </header>
+
+    <section class="control-panel">
+      <!-- Search Input -->
+      <div class="control-group search-input-group">
+        <label for="search-input">Search Target</label>
+        <input type="text" id="search-input" placeholder="Type pattern (e.g. Cat)..." autocomplete="off">
+      </div>
+
+      <!-- Bonus: Target Vector Field Selection -->
+      <div class="control-group">
+        <label for="search-field">Target Vector</label>
+        <select id="search-field">
+          <option value="name" selected>Name</option>
+          <option value="fullName">Full Name</option>
+          <option value="race">Race</option>
+          <option value="gender">Gender</option>
+          <option value="alignment">Alignment</option>
+          <option value="placeOfBirth">Place of Birth</option>
+          <option value="height">Height (cm)</option>
+          <option value="weight">Weight (kg)</option>
+          <option value="intelligence">Intelligence</option>
+          <option value="strength">Strength</option>
+          <option value="speed">Speed</option>
+          <option value="durability">Durability</option>
+          <option value="power">Power</option>
+          <option value="combat">Combat</option>
+        </select>
+      </div>
+
+      <!-- Bonus: Search Operators -->
+      <div class="control-group">
+        <label for="search-operator">Operator</label>
+        <select id="search-operator">
+          <option value="include" selected>Include</option>
+          <option value="exclude">Exclude</option>
+          <option value="fuzzy">Fuzzy Match</option>
+          <option value="eq">Equal (=)</option>
+          <option value="neq">Not Equal (!=)</option>
+          <option value="gt">Greater Than (&gt;)</option>
+          <option value="lt">Less Than (&lt;)</option>
+        </select>
+      </div>
+
+      <!-- Page Size Selector (Default: 20) -->
+      <div class="control-group">
+        <label for="page-size">Page Size</label>
+        <select id="page-size">
+          <option value="10">10</option>
+          <option value="20" selected>20</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+          <option value="all">all results</option>
+        </select>
+      </div>
+    </section>
+
+    <div class="stats-bar">
+      <span id="record-count">Records: 0 / 0</span>
+      <span id="sort-status">Sort: name (ASC)</span>
+    </div>
+
+    <!-- The Required <table> Element -->
+    <div class="table-wrapper">
+      <table id="heroes-table">
+        <thead>
+          <tr>
+            <th data-column="icon" class="sortable">Icon</th>
+            <th data-column="name" class="sortable">Name</th>
+            <th data-column="fullName" class="sortable">Full Name</th>
+            <th data-column="intelligence" class="sortable">INT</th>
+            <th data-column="strength" class="sortable">STR</th>
+            <th data-column="speed" class="sortable">SPD</th>
+            <th data-column="durability" class="sortable">DUR</th>
+            <th data-column="power" class="sortable">PWR</th>
+            <th data-column="combat" class="sortable">CMB</th>
+            <th data-column="race" class="sortable">Race</th>
+            <th data-column="gender" class="sortable">Gender</th>
+            <th data-column="height" class="sortable">Height</th>
+            <th data-column="weight" class="sortable">Weight</th>
+            <th data-column="placeOfBirth" class="sortable">Place of Birth</th>
+            <th data-column="alignment" class="sortable">Alignment</th>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <tr><td colspan="15" class="status-cell">ACCESSING DATA MATRIX...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Client-Side Pagination Controls -->
+    <nav class="pagination-panel">
+      <button id="btn-first" title="First Page">&laquo; First</button>
+      <button id="btn-prev" title="Previous Page">&lsaquo; Prev</button>
+      <span id="page-indicator">Page 1 of 1</span>
+      <button id="btn-next" title="Next Page">Next &rsaquo;</button>
+      <button id="btn-last" title="Last Page">Last &raquo;</button>
+    </nav>
+  </div>
+
+  <!-- Hero Detail Dossier Modal -->
+  <div id="dossier-modal" class="modal hidden">
+    <div class="modal-backdrop"></div>
+    <div class="modal-card">
+      <button class="modal-close" id="modal-close-btn" aria-label="Close dossier">&times;</button>
+      <div id="modal-content" class="modal-body"></div>
+    </div>
+  </div>
+
+  <!-- Main ES6 Entrypoint -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
