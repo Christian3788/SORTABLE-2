@@ -1,19 +1,7 @@
-export const API_URL = "https://rawcdn.githack.com/akabab/superhero-api/0.2.0/api/all.json";
-
-export const state = {
-  rawHeroes: [],
-  filteredHeroes: [],
-  sort: { column: "name", direction: "asc" },
-  pagination: { page: 1, pageSize: 20 },
-  filter: { field: "name", operator: "include", query: "" },
-  selectedHeroId: null,
-};
-
-export function cleanString(val) {
-  if (val === null || val === undefined) return null;
-  const str = String(val).trim();
-  return str === "" || str === "-" ? null : str;
-}
+/**
+ * Unit parsers that normalize the API's mixed measurement strings
+ * into comparable metric numbers (centimetres and kilograms).
+ */
 
 export function parseHeightMetric(heightArr) {
   if (!Array.isArray(heightArr) || heightArr.length === 0) return null;
@@ -79,34 +67,4 @@ export function parseWeightMetric(weightArr) {
   }
 
   return null;
-}
-
-export function normalizeHero(h) {
-  const heightCm = parseHeightMetric(h.appearance?.height);
-  const weightKg = parseWeightMetric(h.appearance?.weight);
-
-  return {
-    id: h.id,
-    icon: h.images?.xs || "",
-    largeImage: h.images?.lg || h.images?.md || h.images?.sm || h.images?.xs || "",
-    name: cleanString(h.name),
-    fullName: cleanString(h.biography?.fullName),
-    intelligence: h.powerstats?.intelligence ?? null,
-    strength: h.powerstats?.strength ?? null,
-    speed: h.powerstats?.speed ?? null,
-    durability: h.powerstats?.durability ?? null,
-    power: h.powerstats?.power ?? null,
-    combat: h.powerstats?.combat ?? null,
-    race: cleanString(h.appearance?.race),
-    gender: cleanString(h.appearance?.gender),
-    height: heightCm !== null ? `${heightCm} cm` : null,
-    heightRaw: heightCm,
-    weight: weightKg !== null ? `${weightKg} kg` : null,
-    weightRaw: weightKg,
-    placeOfBirth: cleanString(h.biography?.placeOfBirth),
-    alignment: cleanString(h.biography?.alignment),
-    publisher: cleanString(h.biography?.publisher),
-    workOccupation: cleanString(h.work?.occupation),
-    groupAffiliation: cleanString(h.connections?.groupAffiliation),
-  };
 }

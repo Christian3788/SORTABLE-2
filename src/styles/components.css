@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Components: Form Controls, Data Table, Badges, Pagination
+   ========================================================================== */
+
+/* Form Controls */
+.control-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.control-group label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+select,
+input {
+  height: 36px;
+  background: var(--bg-surface-raised);
+  color: var(--text-bright);
+  border: 1px solid var(--border-base);
+  padding: 0 12px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  outline: none;
+  border-radius: var(--radius-sm);
+  transition: all 0.15s ease-in-out;
+}
+
+select {
+  cursor: pointer;
+  padding-right: 28px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+}
+
+select:focus,
+input:focus {
+  border-color: var(--text-muted);
+  background-color: var(--bg-surface-hover);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.08);
+}
+
+input::placeholder {
+  color: var(--text-faint);
+}
+
+/* Data Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+thead th {
+  background: var(--bg-surface-raised);
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-base);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  user-select: none;
+}
+
+thead th.sortable {
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+thead th.sortable:hover {
+  color: var(--text-bright);
+  background-color: var(--bg-surface-hover);
+}
+
+th.sort-asc::after {
+  content: " ↑";
+  color: var(--accent-teal);
+  font-weight: bold;
+}
+
+th.sort-desc::after {
+  content: " ↓";
+  color: var(--accent-teal);
+  font-weight: bold;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: background-color 0.12s ease;
+}
+
+tbody tr:last-child {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background-color: var(--bg-surface-hover);
+}
+
+tbody td {
+  padding: 10px 14px;
+  color: var(--text-main);
+  font-size: 13px;
+}
+
+.hero-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: var(--bg-surface-raised);
+  border: 1px solid var(--border-base);
+  display: block;
+}
+
+tbody td strong {
+  color: var(--text-bright);
+  font-weight: 600;
+}
+
+/* Status Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 7px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.badge-good {
+  background-color: var(--accent-teal-bg);
+  color: #2dd4bf;
+  border: 1px solid var(--accent-teal-border);
+}
+
+.badge-bad {
+  background-color: var(--accent-crimson-bg);
+  color: #fb7185;
+  border: 1px solid var(--accent-crimson-border);
+}
+
+.badge-neutral {
+  background-color: var(--accent-amber-bg);
+  color: #fbbf24;
+  border: 1px solid var(--accent-amber-border);
+}
+
+.badge-empty {
+  color: var(--text-faint);
+}
+
+.status-cell {
+  text-align: center;
+  padding: 50px 14px !important;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+}
+
+/* Pagination Controls */
+.pagination-panel {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.pagination-panel button {
+  height: 32px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-base);
+  color: var(--text-main);
+  padding: 0 12px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.pagination-panel button:hover:not(:disabled) {
+  background: var(--bg-surface-raised);
+  color: var(--text-bright);
+  border-color: var(--border-active);
+}
+
+.pagination-panel button:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+#page-indicator {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  margin: 0 8px;
+}
