@@ -1,0 +1,45 @@
+/* ==========================================================================
+   Design Tokens
+   Single source of truth for surfaces, typography, accents and geometry.
+   ========================================================================== */
+
+:root {
+  /* Surface Layers (Deep Slate & Muted Zinc) */
+  --bg-app: #0d0f14;
+  --bg-surface: #141721;
+  --bg-surface-raised: #1c202d;
+  --bg-surface-hover: #242938;
+  --bg-inset: #090a0e;
+
+  /* Structural Dividers */
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  --border-base: rgba(255, 255, 255, 0.12);
+  --border-active: rgba(255, 255, 255, 0.24);
+
+  /* Typography Colors */
+  --text-bright: #f8fafc;
+  --text-main: #cbd5e1;
+  --text-muted: #64748b;
+  --text-faint: #475569;
+
+  /* Accent Signifiers */
+  --accent-crimson: #e11d48;
+  --accent-crimson-bg: rgba(225, 29, 72, 0.12);
+  --accent-crimson-border: rgba(225, 29, 72, 0.35);
+
+  --accent-teal: #0d9488;
+  --accent-teal-bg: rgba(13, 148, 136, 0.12);
+  --accent-teal-border: rgba(13, 148, 136, 0.35);
+
+  --accent-amber: #d97706;
+  --accent-amber-bg: rgba(217, 119, 6, 0.12);
+  --accent-amber-border: rgba(217, 119, 6, 0.35);
+
+  /* Font Families */
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Inter", Helvetica, Arial, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+}
